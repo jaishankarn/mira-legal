@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mira — Google connection</title>
+<style>body{font:18px/1.6 system-ui,sans-serif;max-width:30rem;margin:4rem auto;padding:0 1rem;text-align:center;color:#0f172a}</style></head>
+<body>
+<h1 id="t">Done</h1>
+<p id="m">You can close this tab and return to Mira.</p>
+<script>
+var s=new URLSearchParams(location.search).get('status');
+var map={ok:['Google Calendar connected','You can close this tab and return to Mira.'],
+ denied:['Not connected','You cancelled the Google permission screen. Return to Mira and try again whenever you like.'],
+ error:['Something went wrong','Google did not complete the connection. Return to Mira and try again.']};
+var v=map[s]||map.error; document.getElementById('t').textContent=v[0]; document.getElementById('m').textContent=v[1];
+</script>
+</body></html>
